@@ -9,7 +9,6 @@
   --lightpink: #fa91f0;
   --hotpink: #ff00e5;
   --darkpink: #e205c4;
-  --header-script: "Mystery Quest", system-ui;
 }
 
 body {
@@ -20,38 +19,44 @@ body {
 }
 
 .recipe-container {
-    background-color: yellow;
-    border: 10px solid red;
-    margin: 10px;
-    padding: 5px;
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "description description"
+    "meta ingredients"
+    "instructions instructions";
+    grid-template-columns: 1fr 2fr;
 }
 
 .recipe-header {
     background-color: var(--lightpink);
     border: 3px dotted blue;
     text-align: center;
+    grid-area: header;
 }
 
 .recipe-title {
     color: black;
-    font-family: var(--header-script);
     font-size: 80px;
 }
 
 .recipe-meta {
     background-color: orange;
     border: 2px dashed purple;
+    grid-area: meta;
 }
 
 .recipe-description {
     background-color: aqua;
     font-size: 8px;
     color: purple;
+    grid-area: description;
 }
 
 .ingredients-section {
     background-color: pink;
     border: 5px solid brown;
+    grid-area: ingredients;
 }
 
 .ingredients-list {
@@ -68,6 +73,7 @@ body {
 .instructions-section {
     background-color: lightgray;
     border: 3px solid navy;
+    grid-area: instructions;
 }
 
 .instruction-step {
@@ -83,8 +89,8 @@ body {
 }
 
 .recipe-image {
-    width: 50px;
-    height: 50px;
+    width: 500px;
+    height: 500px;
     border: 5px solid black;
 }
 
