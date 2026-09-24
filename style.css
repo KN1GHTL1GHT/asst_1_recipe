@@ -13,9 +13,10 @@
 
 body {
     font-family: "Emilys Candy", serif;
-    background-color: var(--periwinkle);
+    background-image: url(assets/background.png);
+    background-repeat: repeat;
+    background-size: 100px 100px;
     margin: 0;
-    padding: 0;
 }
 
 .recipe-container {
@@ -24,19 +25,23 @@ body {
     "header header"
     "description description"
     "meta ingredients"
-    "instructions instructions";
+    "instructions instructions"
+    "footer footer";
     grid-template-columns: 1fr 2fr;
+    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 .recipe-header {
-    background-color: var(--lightpink);
-    border: 3px dotted blue;
+    background-color: transparent;
     text-align: center;
     grid-area: header;
+
 }
 
 .recipe-title {
     color: black;
+    background-color: var(--lightpink);
     font-size: 80px;
 }
 
@@ -84,14 +89,13 @@ body {
 
 .recipe-footer {
     background-color: violet;
-    text-align: right;
-    font-size: 6px;
+    text-align: center;
+    font-size: 15px;
+    grid-area: footer;
 }
 
 .recipe-image {
-    width: 500px;
     height: 500px;
-    border: 5px solid black;
 }
 
 * {
