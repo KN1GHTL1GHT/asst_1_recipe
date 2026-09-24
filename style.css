@@ -79,7 +79,7 @@ body {
     margin: 1.25rem;
     background-color: var(--periwinkle);
     border: 7px solid var(--cream);
-    border-radius: 3px;
+    border-radius: 50px;
     box-shadow: 0 12px 24px rgba(86, 44, 120, 0.25);
     transform: rotate(-1.5deg);
 }
@@ -124,7 +124,7 @@ body {
     padding: 1.75rem 2rem;
     background-color: var(--cream);
     border: 7px solid var(--lightpink);
-    border-radius: 4px;
+    border-radius: 50px;
     box-shadow: 0 12px 24px rgba(86, 44, 120, 0.25);
     transform: rotate(2deg);
 }
@@ -144,7 +144,7 @@ body {
     padding: 1.5rem;
     background-color: var(--star);
     border: 7px solid var(--cream);
-    border-radius: 3px;
+    border-radius: 50px;
     box-shadow: 0 12px 24px rgba(86, 44, 120, 0.25);
     transform: rotate(-1deg);
 }
@@ -194,15 +194,103 @@ body {
 }
 
 .instructions-section {
-    background-color: lightgray;
-    border: 3px solid navy;
     grid-area: instructions;
+    position: relative;
+    overflow: hidden;
+    margin: 1.25rem;
+    background-color: var(--cream);
+    border: 7px solid var(--cream);
+    border-radius: 50px;
+    box-shadow: 0 12px 24px rgba(86, 44, 120, 0.25);
+    transform: rotate(-0.5deg);
+}
+
+.instructions-section h2 {
+    margin: 0;
+    padding: 1rem 1.5rem;
+    color: var(--ink);
+    font-size: 3rem;
+    text-align: center;
+}
+
+.instructions-list {
+    counter-reset: step;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .instruction-step {
-    background-color: beige;
-    border: 2px solid maroon;
-    margin: 3px;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 1.5rem 2rem;
+    padding-right: clamp(2rem, 26%, 300px);
+    border: none;
+    color: var(--ink);
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.instruction-step strong {
+    font-size: 1.15em;
+}
+
+.instruction-step::before {
+    counter-increment: step;
+    content: counter(step);
+    flex: 0 0 auto;
+    display: grid;
+    place-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: var(--cream);
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(86, 44, 120, 0.2);
+    color: var(--hotpink);
+    font-size: 1.4rem;
+}
+
+.instruction-step:nth-child(3n + 1) {
+    background-color: var(--lightpink);
+}
+
+.instruction-step:nth-child(3n + 2) {
+    background-color: var(--periwinkle);
+}
+
+.instruction-step:nth-child(3n) {
+    background-color: var(--star);
+}
+
+/* Decorative cut-outs straddling the colour bands. */
+.instructions-section::before,
+.instructions-section::after {
+    content: "";
+    position: absolute;
+    right: 3%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 8px 14px rgba(86, 44, 120, 0.35));
+    pointer-events: none;
+}
+
+.instructions-section::before {
+    top: 12%;
+    width: min(220px, 21%);
+    aspect-ratio: 1.028;
+    background-image: url(assets/bakingtools.png);
+    transform: rotate(8deg);
+}
+
+.instructions-section::after {
+    bottom: 10%;
+    width: min(250px, 24%);
+    aspect-ratio: 1.398;
+    background-image: url(assets/cookie2.png);
+    transform: rotate(-7deg);
 }
 
 .recipe-footer {
