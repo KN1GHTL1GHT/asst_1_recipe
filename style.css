@@ -20,17 +20,22 @@ body {
     background-repeat: repeat;
     background-size: 100px 100px;
     background-color: var(--cream);
-    margin: 0;
+    margin: 10px;
 }
 
 .recipe-container {
     display: grid;
     grid-template-areas: 
-    "header description"
-    "meta ingredients"
+    "header meta"
+    "description ingredients"
     "instructions instructions"
     "footer footer";
     grid-template-columns: 1fr 1.6fr;
+    align-content: start;
+    box-sizing: border-box;
+    max-width: 1250px;
+    margin-inline: auto;
+    padding: 1.5rem;
     min-height: 100vh;
     min-height: 100dvh;
 }
@@ -40,7 +45,9 @@ body {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    width: fit-content;
+    align-self: start;
+    box-sizing: border-box;
+    width: min(100%, 440px);
     margin: 2.5rem auto;
     padding: 1.25rem 1.25rem 0;
     background-color: var(--cream);
@@ -62,6 +69,7 @@ body {
 
 .recipe-meta {
     grid-area: meta;
+    align-self:center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -82,7 +90,7 @@ body {
     display: grid;
     place-content: center;
     text-align: center;
-    padding: 0.75rem;
+    padding: 1.75rem;
     background-color: var(--cream);
     border-radius: 8px;
     box-shadow: 0 3px 8px rgba(86, 44, 120, 0.2);
@@ -165,7 +173,7 @@ body {
 
 .recipe-image {
     display: block;
-    width: min(400px, 70vw);
+    width: 100%;
     height: auto;
     background-color: var(--lightpink);
 }
