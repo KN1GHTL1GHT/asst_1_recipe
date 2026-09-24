@@ -63,13 +63,13 @@ body {
     max-width: 12ch;
     color: var(--hotpink);
     background-color: transparent;
-    font-size: 2.75rem;
+    font-size: 3.75rem;
     line-height: 1.05;
 }
 
 .recipe-meta {
     grid-area: meta;
-    align-self:center;
+    align-self: flex-end;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -81,12 +81,12 @@ body {
     border: 7px solid var(--cream);
     border-radius: 50px;
     box-shadow: 0 12px 24px rgba(86, 44, 120, 0.25);
-    transform: rotate(-1.5deg);
+    transform: rotate(1.5deg);
 }
 
 .meta-item {
     flex: 0 1 8rem;
-    font-size: 2.0rem;
+    font-size: 1.8rem;
     aspect-ratio: 1;
     display: grid;
     place-content: center;
@@ -99,7 +99,7 @@ body {
 
 .meta-item strong {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 0.35rem;
     color: var(--hotpink);
 }
@@ -118,7 +118,7 @@ body {
 
 .recipe-description {
     grid-area: description;
-    align-self: center;
+    align-self: flex-start;
     justify-self: start;
     margin: 2.5rem 2rem;
     padding: 1.75rem 2rem;
@@ -294,10 +294,29 @@ body {
 }
 
 .recipe-footer {
-    background-color: violet;
-    text-align: center;
-    font-size: 15px;
     grid-area: footer;
+    justify-self: center;
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 2.5rem 2rem;
+    padding: 1.75rem 2.5rem;
+    background-color: var(--cream);
+    border: 7px solid var(--lightpink);
+    border-radius: 50px;
+    box-shadow: 0 12px 24px rgba(86, 44, 120, 0.25);
+    text-align: center;
+}
+
+.recipe-footer p {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.recipe-footer p + p {
+    margin-top: 0.5rem;
+    color: var(--darkpink);
 }
 
 .recipe-image {
