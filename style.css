@@ -229,7 +229,7 @@ body {
     padding-right: clamp(2rem, 26%, 300px);
     border: none;
     color: var(--ink);
-    font-size: 1.05rem;
+    font-size: 1.25rem;
     line-height: 1.5;
 }
 
@@ -324,4 +324,61 @@ body {
     width: 100%;
     height: auto;
     background-color: var(--lightpink);
+}
+
+/* ---------- Mobile: single column, under 48rem (768px) ---------- */
+@media (max-width: 48rem) {
+    .recipe-container {
+        grid-template-areas:
+        "header"
+        "description"
+        "meta"
+        "ingredients"
+        "instructions"
+        "footer";
+        grid-template-columns: 1fr;
+        padding: 0.75rem;
+    }
+
+    .recipe-header {
+        justify-self: center;
+        margin: 1rem auto;
+    }
+
+    .recipe-title {
+        font-size: 2.25rem;
+    }
+
+    /* every card fills the single column instead of hugging its content */
+    .recipe-description,
+    .recipe-meta,
+    .ingredients-section,
+    .instructions-section,
+    .recipe-footer {
+        justify-self: stretch;
+        align-self: auto;
+        margin: 1rem 0.25rem;
+    }
+
+    .recipe-description p {
+        max-width: none;
+        font-size: 1.15rem;
+    }
+
+    /* the cut-outs would squeeze the step text on a narrow screen */
+    .instructions-section::before,
+    .instructions-section::after {
+        display: none;
+    }
+
+    .instruction-step {
+        gap: 0.85rem;
+        padding: 1.25rem;
+    }
+
+    .instruction-step::before {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 1.15rem;
+    }
 }
